@@ -1,0 +1,898 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+html {
+scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+body {
+height: 300vh;
+}
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: "Open Sans", sans-serif;
+}
+*::selection{
+background-color: rgb(4, 79, 48);
+color: white;
+}
+@keyframes hero {
+50% {
+  width: 70%;
+  border-radius: 30px;
+}
+100% {
+  width: 75%;
+  border-radius: 30px;
+}
+}
+header#hero {
+width: 100%;
+height: 100vh;
+margin: auto;
+overflow: hidden;
+animation: hero ease;
+animation-timeline: scroll();
+background-color: rgb(216, 255, 224);
+position: relative;
+}
+video {
+width: 100%;
+height: 91%;
+object-fit: cover;
+}
+header#hero nav {
+position: absolute;
+top: 5vh;
+padding-inline: 5vw 7vw;
+width: 85%;
+display: flex;
+justify-content: space-between;
+}
+#hero nav > div > button:nth-of-type(1) {
+border-radius: 0px;
+border-top-left-radius: 15px;
+border-bottom-left-radius: 15px;
+color: black;
+}
+#hero nav > div > button:nth-of-type(2) {
+border-radius: 0px;
+border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+color: black;
+}
+button{
+border-radius: 15px;
+border: none;
+padding: 15px 25px;
+font-size: 17px;
+}
+#hero button {
+color: black;
+background-color: rgba(180, 176, 176, 0.281);
+}
+#hero button#start {
+z-index: 3;
+background-color: rgb(4, 79, 48);
+color: white;
+position: fixed;
+top: 5%;
+right: 5%;
+}
+#hero > div:nth-of-type(2) {
+width: 100%;
+padding: 16px 0px;
+background-color: rgb(216, 255, 224);
+text-align: center;
+color: rgb(3, 70, 3);
+}
+#hero > div:nth-of-type(2) > p:first-child {
+font-weight: 700;
+}
+#hero_text {
+position: absolute;
+z-index: 2;
+top: 25%;
+}
+#hero_text > h1 {
+font-size: clamp(32px,4vw,6em);
+color: white;
+font-weight: 400;
+margin-left: 5vw;
+max-width: 35vw;
+line-height: 0.8em;
+}
+@keyframes textChange {
+0% {
+  content: "Rahul is a real fruit guide";
+}
+25% {
+  content: "Sruthy is a real fruit guide";
+}
+50% {
+  content: "Adarsha is a real fruit guide";
+}
+75% {
+  content: "Vivek is a real fruit guide";
+}
+100% {
+  content: "Mahesh is a real fruit guide";
+}
+}
+#hero_text > h1::after {
+display: block;
+font-size: clamp(20px,2vw,30px);
+content: "Rahul is a real fruit guide";
+animation: textChange 5s infinite;
+margin-top: 2em;
+}
+#hero_text > button {
+background-color: white;
+color: black;
+margin-left: 5vw;
+padding: 1rem 3rem;
+margin-top: 2em;
+}
+
+@media (width <= 800px) {
+header button{
+  display: none;
+}
+
+#hero button#start {
+display: inline-block;
+}
+#hero_text > button{
+display: inline-block;
+}
+}
+
+
+@keyframes headingShow{
+100%{
+    transform: scale(1);
+}
+}
+.heading_text{
+transform: scale(0.7);
+animation: headingShow forwards;
+animation-timeline: view();
+animation-range: 10vh 50vh;
+text-align: center;
+margin: auto;
+font-weight: 500;
+font-size: clamp(20px,5vw,35px);
+max-width: 70%;
+margin-top: 2em;
+}
+
+section#Fruitful_Guide img{
+width: 0;
+animation: imageRotate forwards;
+animation-timeline: view();
+height: 85px;
+}
+@keyframes imageRotate{
+100%{
+    width: 110px;
+    transform: rotate(-5deg) translateY(0.5em) rotateY(0deg);
+    margin: -0.5em 0.5em 0 0.5em;
+}
+}
+section#Fruitful_Guide img:first-child{
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+transform: rotateY(90deg);
+background-color: bisque;
+animation-range: 45vh 50vh;
+
+}
+section#Fruitful_Guide img:nth-of-type(2){
+animation-range: 30vh 35vh;
+transform: translateY(1em);
+}
+section#Fruitful_Guide h1:nth-of-type(2){
+max-width: 45%;
+margin-top: 3em;
+}
+.para_text{
+text-align: center;
+width: 25%;
+min-width: 300px;
+margin: 3rem auto;
+}
+section#choose>.container{
+display: flex;
+justify-content: center;
+gap:2em;
+margin-top: 2em;
+height: 60vh;
+}
+section#choose>.container>*{
+width: 40%;     
+border-radius: 20px;
+}
+section#choose>.container>div:nth-of-type(1){
+height: auto;
+object-fit: cover;
+transition: transform 0.5s;
+transform-origin: left;
+overflow: hidden;
+}
+section#choose>.container>div:nth-of-type(1)>video{
+width: 100%;
+height: 100%;
+}
+section#choose>.container>img{
+height: 100%;
+object-fit: cover;
+transition: transform 0.5s;
+transform-origin: right;
+}
+section#choose>.container>*:hover{
+transform: scaleX(1.3);
+}
+section#choose>.container:hover>*:nth-child(1):hover~*:not(:hover),.highlight{
+transform: scaleX(.7);
+}
+
+/* Section guides */
+
+#Guides>.container{
+max-width: 1400px;
+margin: auto;
+gap: 1em;
+}
+#Guides button{
+background-color: transparent;
+border: 1px solid;
+font-size: 14px;
+}
+#Guides #users{
+width: 100%;
+margin-top: 3em;
+position: relative;
+}
+#Guides div.container>div:nth-of-type(1){
+display: flex;
+justify-content: center;
+}
+#Guides div.container>#users{
+max-width: 100%;
+}
+#Guides div.container>#users>div{
+position: absolute;
+background-color: rgb(254, 234, 209);
+width: 200px;
+height: 300px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+}
+#Guides div.container>#users>div:nth-of-type(1){
+left: 10%;
+transform: rotate(3deg);
+}
+#Guides div.container>#users>div:nth-of-type(2){
+left: 21%;
+transform: rotate(-1deg);
+}
+#Guides div.container>#users>div:nth-of-type(3){
+left: 33%;
+transform: rotate(3deg);
+}
+#Guides div.container>#users>div:nth-of-type(4){
+left: 45%;
+transform: rotate(-3deg);
+}
+#Guides div.container>#users>div:nth-of-type(5){
+left: 57%;
+transform: rotate(3deg);
+}
+#Guides div.container>#users>div:nth-of-type(6){
+left: 69%;
+transform: rotate(1deg);
+}
+#Guides div.container>#users>div:hover{
+z-index: 2;
+transition: transform 0.2s ease-in-out;
+transform: scale(1.2) rotate(-5deg);
+border-radius: 20px;
+}
+#Guides #users img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+@keyframes userCard{
+100%{
+    transform: scale(1);
+}
+}
+#Guides #users{
+width: 100vw;
+min-height: 350px;
+height: auto;
+transform: scale(.7);
+animation: userCard forwards;
+animation-timeline: view();
+animation-range: 0 50vw;
+}
+#Guides #users>div{
+position: relative;
+left: 0;
+top: 0;
+}
+#Guides #users>div>img{
+position: absolute;
+}
+#Guides #users>div>img+video{
+position: absolute;
+width: 100%;
+height: 100%;
+display: none;
+}
+#Guides #users>div:hover video{
+display: inline-block;
+border-radius: 20px;
+}
+#Guides button#your_guide{
+background-color: rgb(4, 79, 48);
+color: white;
+display: block;
+margin: auto;
+}
+@media (width <= 900px) {
+#Guides div.container>#users{
+  display: grid;
+  margin: 2rem;
+  justify-content: center;
+  grid-template-columns: repeat(2,1fr);
+}
+#Guides div.container>#users>div{
+  position: relative;
+}
+#Guides div.container>#users>div:nth-of-type(1),#Guides div.container>#users>div:nth-of-type(2),#Guides div.container>#users>div:nth-of-type(3),
+#Guides div.container>#users>div:nth-of-type(4),#Guides div.container>#users>div:nth-of-type(5),#Guides div.container>#users>div:nth-of-type(6){ 
+  left: 0;
+}
+#Guides #users>div>img{
+  position: absolute;
+}
+}
+@media (width <= 500px){
+#Guides div.container>#users{
+  grid-template-columns: repeat(1,1fr);
+  margin: 2rem 0;
+}
+#Guides div.container>#users>div{
+  margin: auto;
+}
+}
+main{
+margin-top: 10vh;
+border-top-left-radius: 3em;
+border-top-right-radius: 3em;
+background-image: linear-gradient(#9dd1e9,#9dd1e9,#ffffff,white);
+padding-top: 40vh;
+min-height: 400vh;
+height: auto;
+}
+main .container{
+position: relative;
+height: 150vh;
+}
+@media (width <= 1000px){
+main{
+  padding-top: 0;
+}
+main>div.container{
+  padding-top: 10vh;
+  height: 100vh;
+}
+}
+main>.container>img:nth-of-type(1){
+bottom: 0;
+position: absolute;
+width: 40%;
+}
+main>.container>img:nth-of-type(2){
+position: absolute;
+bottom: 0;
+width: 100%;
+z-index: 2;
+max-height: 60%;
+object-fit: cover;
+object-position: top;
+}
+main>.container>img:nth-of-type(3){
+position: absolute;
+bottom: 0;
+right: 0;
+width: 40%;
+max-height: 100%;
+}
+main>div.container>div{
+background-color: rgb(245, 240, 214);
+width: 100%;
+height: 10%;
+max-height: 30vh;
+position: absolute;
+top: 98%;        
+}
+@keyframes fontSize{
+50%{
+    color: white;
+}
+70%{
+    color: rgb(255, 255, 255);
+    transform: translateY(0vh);
+}
+80%{
+    color: black;
+}
+100%{
+    font-size: 4vw;
+    color: black;
+    transform: translateY(55vh);
+}
+}
+#membership{
+position: sticky;
+top: 30vh;
+z-index: 3;
+text-align: center;
+color: white;
+font-size: 8vw;
+line-height: 1em;
+margin: auto;
+font-weight: 500;
+animation: fontSize forwards;
+animation-timeline: view();
+font-family: "Raleway", sans-serif;
+}
+main>div.container+div{
+margin-top: 60vh;
+text-align: center;
+position: relative;
+}
+main>div.container+div>p{
+width: 25%;
+margin: auto;
+font-weight: 600;
+font-size: clamp(10px,3vw,16px);
+}
+
+@keyframes stickyFooter{
+100%{
+    position: fixed;
+    top: 90vh;
+}
+}
+#footer_bar{
+display: none;
+/* display: flex; */
+justify-content: center;
+}
+#footer_bar>div{
+background-color: rgba(136, 128, 128, 0.301);
+display: inline-block;
+border-radius: 25px;
+animation: stickyFooter forwards;
+animation-timeline: view();
+animation-range: 10vh 30vh;
+}
+#footer_bar button{
+color: black;
+background-color: transparent;
+border: none;
+font-weight: 500;
+}
+main #tell_me{
+background-color: rgb(4, 79, 48);
+color: white;
+}
+@keyframes guidanceCards{
+40%{
+    filter: blur(0px);
+}
+90%{
+    filter: blur(2px);
+    transform: scale(.8);
+}
+100%{
+    transform: scale(1);
+    filter: blur(0px);
+}
+}
+@keyframes guidanceDiv{
+0%{
+    position: sticky;
+    top: 10vh;
+}
+100%{
+    position: static;
+}
+}
+#guidance{
+background-color: white;
+width: 90%;
+margin: auto;
+padding: 5em 8em;
+font-weight: 600;
+border-radius: 2em;
+margin-top: 10vh;
+display: flex;
+justify-content: space-between;
+}
+#guidance:first-child{
+position: sticky;
+top: 10vh;        
+animation: guidanceCards forwards;
+animation-timeline: view();
+}
+#guidance:nth-of-type(2){
+position: sticky;
+top: 10vh;        
+animation: guidanceCards forwards;
+animation-timeline: view();
+}
+#guidance:nth-of-type(3){
+position: sticky;
+top: 10vh;        
+z-index: 2;
+}
+#guidanceDiv{
+animation: guidanceDiv;
+animation-timeline: view();
+}
+#guidance{
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#guidance>div{
+width: 40%;
+}
+#guidance>div:nth-of-type(2){
+width: 50%;
+}
+#guidance h2{
+font-size: 26px;
+line-height: 2em;
+font-weight: 500;
+}
+#guidance ul{
+line-height: 2em;
+}
+#guidance button{
+margin-top: 2em;
+}
+#guidance>div:nth-of-type(2)>img{
+height: 100%;
+width: 100%;
+object-fit: cover;
+object-position: top;
+background-color: bisque;
+border-radius: 2em;
+position: absolute;
+}
+#guidance>div:nth-of-type(2){
+position: relative;
+}
+#guidance>div:nth-of-type(2)>div{
+position: absolute;
+width: 45%;
+color: white;
+font-weight: 400;
+padding: 1em;
+border-radius: 1em;
+font-size: 13px;
+}
+#guidance>div:nth-of-type(2)>div:nth-of-type(1){
+position: absolute;
+background-color: rgb(50, 128, 254);
+top: 5%;
+left: -15%;
+}
+#guidance>div:nth-of-type(2)>div:nth-of-type(2){
+position: absolute;
+background-color: rgb(160, 157, 157);
+top: 30%;
+left: -10%;
+}
+#guidance>div:nth-of-type(2)>div:nth-of-type(3){
+position: absolute;
+background-color: rgba(0, 0, 0, 0.571);
+top: 75%;
+left: 65%;
+width: 50%;
+}
+@media (width <= 1000px){
+#guidance{
+padding: 2rem;
+height: auto;
+}}
+@media (width <= 750px){
+#guidance{
+padding: 2rem;
+flex-direction: column;
+}
+#guidance>div{
+width: 100%;
+position: static;
+}
+#guidance>div:nth-of-type(2){
+display: none;
+}
+}
+@keyframes Fruitful_Membership{
+0%{
+    font-size: 5.5em;
+}
+70%{
+    position: sticky;
+}
+80%{
+    position: static;
+}
+100%{
+    font-size: 2.5em;  
+}
+}
+#Fruitful_Membership{
+position: sticky;
+top: 50vh;
+margin-top: 5vh;
+text-align: center;
+font-weight: 500;
+animation: Fruitful_Membership forwards;
+animation-timeline: view();
+}
+main .para_text+div{
+margin-top: 5vh;
+display: flex;
+justify-content: center;
+}
+main .para_text+div button:nth-of-type(1){
+background-color: black;
+color: white;
+}
+main .para_text+div button:nth-of-type(2){
+background-color: transparent;
+border: 1px solid;
+color: rgb(0, 0, 0);
+}
+#Membership{
+height: 45vh;
+}
+#cards3{
+max-width: 1400px;
+margin: auto;
+/* border: 2px solid; */
+
+}
+#cards3>div:nth-of-type(1){
+display: flex;
+margin: auto;
+margin-top: 1.5rem;
+}
+.cards_animate{
+display: flex;
+width: 80%;
+margin: auto;
+margin-top: 3rem;
+gap: 2rem;
+position: relative;
+min-height: 300px;
+}
+@media (width <= 1000px){
+.cards_animate{
+  flex-direction: column;
+}
+}
+.cards_animate>div{
+min-width: 100px;
+min-height: 100px;
+width: 30vw;
+height: 30vw;
+max-height: 300px;
+max-width: 330px;
+overflow: hidden;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+border-radius: 2rem;
+border: 1px solid rgba(128, 128, 128, 0.146);
+position: absolute;
+left: 40%;       
+}
+@keyframes cardBurst1{
+50%{
+    transform: translate(-200%,10px) rotate(-5deg);
+}
+70%{
+    transform: translate(-100%,10px) rotate(-5deg);
+}
+100%{
+    transform: translate(-150%,10px) rotate(-5deg);
+}
+}
+@keyframes cardBurst2{
+50%{
+    transform: translate(200%,10px) rotate(5deg);
+}
+70%{
+    transform: translate(100%,10px) rotate(5deg);
+}
+100%{
+    transform: translate(150%,10px) rotate(5deg);
+}
+}
+.animate{
+animation: cardBurst1 1s forwards;
+transform-origin: bottom;
+}
+.animate2{
+animation: cardBurst2 1s forwards;
+transform-origin: bottom;
+}
+#cards3>div img{
+height: 60%;
+position: absolute;
+}
+.cards_animate>div:nth-of-type(1),.cards_animate>div:nth-of-type(3){
+background-color: white;
+}
+.cards_animate>div:nth-of-type(1)>img:nth-of-type(1){
+top: 50%;
+}
+.cards_animate>div:nth-of-type(1)>img:nth-of-type(2){
+top: -20%;
+right: 0;
+}
+.cards_animate>div:nth-of-type(2){
+background-color: rgb(254, 234, 209);
+}
+.cards_animate>div:nth-of-type(2)>img:nth-of-type(1){
+top: -10%;
+height: 90%;
+width: 40%;
+}
+.cards_animate>div:nth-of-type(3)>img:nth-of-type(1){
+top: -40%;
+height: 100% !important;
+}
+.cards_animate>div:nth-of-type(3)>img:nth-of-type(2){
+height: 15% !important;
+right: 10%;
+top: 10%;
+}
+#multiple_cards{
+height: 100vh;
+margin-top: 40vh;
+position: relative;
+z-index: 5;
+background-color: white;
+}
+#multiple_cards h1{
+font-size: 50px;
+font-weight: 600;
+width: 60%;
+text-align: center;
+}
+#multiple_cards p{
+width: 70%;
+text-align: center;
+font-weight: 500;
+}
+#multiple_cards>div:nth-of-type(1){
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 1.5rem;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+background-color: white;
+z-index: 2;
+border-radius: 50%;
+}
+#multiple_cards>.first_card~div{
+width: 200px;
+height: 200px;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+position: absolute;
+border-radius: 5px;
+
+}
+.manyss{
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+@keyframes manyBurst1{
+100%{
+top: 70% ;
+left: 65%;
+transform: rotate(5deg);
+}
+}
+#many1{
+animation: manyBurst1 1s forwards;
+}
+@keyframes manyBurst2{
+100%{
+top: 5%;
+left: 70%;
+transform: rotate(5deg);
+}
+}
+#many2{
+animation: manyBurst2 1s forwards;
+}
+@keyframes manyBurst3{
+100%{
+    top: 7%;
+left: 20%;
+transform: rotate(10deg);
+}
+}
+#many3{
+animation: manyBurst3 1s forwards;
+
+}
+@keyframes manyBurst4{
+100%{
+    top: 40%;
+left: 80%;
+transform: rotate(-10deg);
+}
+}
+#many4{
+animation: manyBurst4 1s forwards;
+}
+@keyframes manyBurst5{
+100%{
+    top: 0%;
+left: 45%;
+transform: rotate(10deg);
+}
+}
+#many5{
+animation: manyBurst5 1s forwards;
+}
+@keyframes manyBurst6{
+100%{
+    top: 30%;
+left: 5%;
+transform: rotate(-15deg);
+}
+}
+#many6{
+animation: manyBurst6 1s forwards;
+}
+@keyframes manyBurst7{
+100%{
+    top: 60%;
+left: 15%;
+transform: rotate(-15deg);
+}
+}
+#many7{
+animation: manyBurst7 1s forwards;
+}
+@keyframes manyBurst8{
+100%{
+    top: 80%;
+left: 40%;
+transform: rotate(15deg);
+}
+}
+#many8{
+animation: manyBurst8 1s forwards;
+}
+
+#multiple_cards>.first_card~div img{
+width: 100%;
+}
+</style>
